@@ -5,23 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug MIMXRT1052",
+            "name": "Embedded Debug",
             "type": "embedded-debug",
             "request": "launch",
             "serialNumber": "${command:device-manager.getSerialNumber}",
-            "program": "${command:cmsis-csolution.getBinaryFile}",
-            "cmsisPack": "${env:CMSIS_PACK_ROOT}/.Download/NXP.MIMXRT1052_DFP.15.0.0.pack",
+            "program": "${command:embedded-debug.getApplicationFile}",
+            "cmsisPack": "${command:device-manager.getDevicePack}",
             "debugFrom": "main"
-        },
-        {
-            "name": "Debug STM32U5xx",
-            "type": "embedded-debug",
-            "request": "launch",
-            "serialNumber": "${command:device-manager.getSerialNumber}",
-            "program": "${command:cmsis-csolution.getBinaryFile}",
-            "cmsisPack": "${env:CMSIS_PACK_ROOT}/.Download/Keil.STM32U5xx_DFP.2.0.0.pack",
-            "debugFrom": "main",
-            "connectMode": "underReset"
         }
     ]
 }
